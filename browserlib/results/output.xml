@@ -1,0 +1,2233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.7.8rc1 on win32)" generated="20220413 14:12:49.886" rpa="false" schemaversion="3">
+<suite id="s1" name="Graphh" source="C:\developement\robot-scripts\browserlib\tests\graphh.robot">
+<test id="s1-t1" name="to verify the url loads" line="10">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:12:51.221" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\1e1ae192-241c-4fc4-9f51-f9943a2dffee"}</msg>
+<msg timestamp="20220413 14:12:52.141" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\1e1ae192-241c-4fc4-9f51-f9943a2dffee"}</msg>
+<status status="PASS" starttime="20220413 14:12:51.221" endtime="20220413 14:12:52.141"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:12:52.142" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:12:52.166" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:12:52.166" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:12:52.141" endtime="20220413 14:12:52.166"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:12:56.995" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<status status="PASS" starttime="20220413 14:12:52.166" endtime="20220413 14:12:56.995"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:12:57.003" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:12:56.996" endtime="20220413 14:12:57.003"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:12:57.023" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:12:57.003" endtime="20220413 14:12:57.024"/>
+</kw>
+<status status="PASS" starttime="20220413 14:12:51.221" endtime="20220413 14:12:57.024"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:12:57.026" level="INFO">Log level changed from INFO to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:12:57.025" endtime="20220413 14:12:57.026"/>
+</kw>
+<kw name="open url" library="graphhapp">
+<kw name="navigate to URL" library="Landingpage">
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:12:57.323" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:12:57.323" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:12:57.031" endtime="20220413 14:12:57.323"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${text_url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220413 14:12:57.326" level="DEBUG">https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:12:57.326" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.00185394287109375 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:12:57.326" level="INFO">${text_url} = https://www.graphhopper.com/</msg>
+<status status="PASS" starttime="20220413 14:12:57.323" endtime="20220413 14:12:57.327"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${text_title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220413 14:12:57.361" level="DEBUG">Active page title is: GraphHopper Directions API with Route Optimization</msg>
+<msg timestamp="20220413 14:12:57.361" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.034039974212646484 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:12:57.361" level="INFO">${text_title} = GraphHopper Directions API with Route Optimization</msg>
+<status status="PASS" starttime="20220413 14:12:57.327" endtime="20220413 14:12:57.361"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${text_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220413 14:12:57.362" level="INFO">https://www.graphhopper.com/</msg>
+<status status="PASS" starttime="20220413 14:12:57.361" endtime="20220413 14:12:57.362"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${text_title}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220413 14:12:57.363" level="INFO">GraphHopper Directions API with Route Optimization</msg>
+<status status="PASS" starttime="20220413 14:12:57.362" endtime="20220413 14:12:57.363"/>
+</kw>
+<status status="PASS" starttime="20220413 14:12:57.028" endtime="20220413 14:12:57.363"/>
+</kw>
+<status status="PASS" starttime="20220413 14:12:57.027" endtime="20220413 14:12:57.363"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:12:57.370" level="INFO">[{"type": "chromium", "id": "browser=ddbb3292-5f4a-4454-b957-4d445a2d71fe", "contexts": [{"type": "context", "id": "context=2f4272e5-9e2e-4235-b8d8-4c61b2a6883e", "activePage": "page=f749e7a8-11a4-43b0-b0b8-f0848cbc0e2e", "pages": [{"type": "page", "title": "GraphHopper Directions API with Route Optimization", "url": "https://www.graphhopper.com/", "id": "page=d0713bcc-fc73-4850-8f7b-f8ac67f5ab68", "timestamp": 1649873572.627}, {"type": "page", "title": "GraphHopper Directions API with Route Optimization", "url": "https://www.graphhopper.com/", "id": "page=f749e7a8-11a4-43b0-b0b8-f0848cbc0e2e", "timestamp": 1649873577.102}]}], "activeContext": "context=2f4272e5-9e2e-4235-b8d8-4c61b2a6883e", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:12:57.370" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.007349729537963867 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:12:57.376" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:12:57.380" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:12:57.383" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:12:57.388" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:12:57.418" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:12:57.363" endtime="20220413 14:12:57.418"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:12:57.606" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:12:57.418" endtime="20220413 14:12:57.606"/>
+</kw>
+<status status="PASS" starttime="20220413 14:12:57.363" endtime="20220413 14:12:57.606"/>
+</kw>
+<doc>this is to verify url opens successfully</doc>
+<tag>url</tag>
+<status status="PASS" starttime="20220413 14:12:51.221" endtime="20220413 14:12:57.606"/>
+</test>
+<test id="s1-t2" name="to verify correct page is loaded" line="16">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:12:57.606" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\164d39b6-5f71-4aa9-b2ef-808c6eb5425a"}</msg>
+<msg timestamp="20220413 14:12:58.803" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\164d39b6-5f71-4aa9-b2ef-808c6eb5425a"}</msg>
+<status status="PASS" starttime="20220413 14:12:57.606" endtime="20220413 14:12:58.804"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:12:58.805" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:12:58.861" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:12:58.861" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:12:58.804" endtime="20220413 14:12:58.861"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:13:03.404" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:13:03.404" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:12:58.861" endtime="20220413 14:13:03.404"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:13:03.408" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:13:03.405" endtime="20220413 14:13:03.409"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:13:03.422" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:13:03.409" endtime="20220413 14:13:03.423"/>
+</kw>
+<status status="PASS" starttime="20220413 14:12:57.606" endtime="20220413 14:13:03.423"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:13:03.424" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:13:03.424" endtime="20220413 14:13:03.425"/>
+</kw>
+<kw name="verify correct page loaded" library="graphhapp">
+<kw name="verification" library="Landingpage">
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:13:03.683" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:13:03.683" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:13:03.428" endtime="20220413 14:13:03.683"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${text_url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220413 14:13:03.686" level="DEBUG">https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:13:03.686" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.0021474361419677734 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:03.687" level="INFO">${text_url} = https://www.graphhopper.com/</msg>
+<status status="PASS" starttime="20220413 14:13:03.683" endtime="20220413 14:13:03.687"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${text_title}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220413 14:13:03.732" level="DEBUG">Active page title is: GraphHopper Directions API with Route Optimization</msg>
+<msg timestamp="20220413 14:13:03.732" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.04441714286804199 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:03.732" level="INFO">${text_title} = GraphHopper Directions API with Route Optimization</msg>
+<status status="PASS" starttime="20220413 14:13:03.687" endtime="20220413 14:13:03.732"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${yes}</var>
+<arg>==</arg>
+<arg>${text_url}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220413 14:13:03.734" level="DEBUG">https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:13:03.734" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.0010197162628173828 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:03.734" level="INFO">${yes} = https://www.graphhopper.com/</msg>
+<status status="PASS" starttime="20220413 14:13:03.732" endtime="20220413 14:13:03.734"/>
+</kw>
+<kw name="Get Title" library="Browser">
+<var>${correct}</var>
+<arg>==</arg>
+<arg>${text_title}</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the title of the current page.</doc>
+<msg timestamp="20220413 14:13:03.738" level="DEBUG">Active page title is: GraphHopper Directions API with Route Optimization</msg>
+<msg timestamp="20220413 14:13:03.738" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.0021810531616210938 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:03.738" level="INFO">${correct} = GraphHopper Directions API with Route Optimization</msg>
+<status status="PASS" starttime="20220413 14:13:03.734" endtime="20220413 14:13:03.738"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${yes}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220413 14:13:03.738" level="INFO">https://www.graphhopper.com/</msg>
+<status status="PASS" starttime="20220413 14:13:03.738" endtime="20220413 14:13:03.738"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${correct}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220413 14:13:03.739" level="INFO">GraphHopper Directions API with Route Optimization</msg>
+<status status="PASS" starttime="20220413 14:13:03.738" endtime="20220413 14:13:03.739"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:03.427" endtime="20220413 14:13:03.739"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:03.425" endtime="20220413 14:13:03.740"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:13:03.759" level="INFO">[{"type": "chromium", "id": "browser=b5aad913-edc6-4f09-bac5-fb483d6837a6", "contexts": [{"type": "context", "id": "context=006eedf3-5aeb-439a-a129-7180908cc6bb", "activePage": "page=d65c3887-8325-48da-8051-d00e2a74ddba", "pages": [{"type": "page", "title": "GraphHopper Directions API with Route Optimization", "url": "https://www.graphhopper.com/", "id": "page=ac5d1b07-b8fa-4cd5-99d2-ace49d262aac", "timestamp": 1649873579.322}, {"type": "page", "title": "GraphHopper Directions API with Route Optimization", "url": "https://www.graphhopper.com/", "id": "page=d65c3887-8325-48da-8051-d00e2a74ddba", "timestamp": 1649873583.483}]}], "activeContext": "context=006eedf3-5aeb-439a-a129-7180908cc6bb", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:13:03.759" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.016222476959228516 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:03.762" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:13:03.762" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:13:03.762" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:13:03.762" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:13:03.789" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:13:03.741" endtime="20220413 14:13:03.789"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:13:04.014" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:13:03.790" endtime="20220413 14:13:04.014"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:03.741" endtime="20220413 14:13:04.014"/>
+</kw>
+<doc>this verifies the correct page loaded</doc>
+<tag>ver</tag>
+<status status="PASS" starttime="20220413 14:12:57.606" endtime="20220413 14:13:04.015"/>
+</test>
+<test id="s1-t3" name="able to click on Maps" line="23">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:13:04.019" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\da60bcf7-2b6f-47a8-af05-7bcf882ef5df"}</msg>
+<msg timestamp="20220413 14:13:05.213" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\da60bcf7-2b6f-47a8-af05-7bcf882ef5df"}</msg>
+<status status="PASS" starttime="20220413 14:13:04.019" endtime="20220413 14:13:05.213"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:13:05.214" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:13:05.229" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:13:05.229" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:13:05.214" endtime="20220413 14:13:05.229"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:13:10.728" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:13:10.728" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:13:05.229" endtime="20220413 14:13:10.728"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:13:10.730" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:13:10.728" endtime="20220413 14:13:10.731"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:13:10.743" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:13:10.731" endtime="20220413 14:13:10.743"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:04.018" endtime="20220413 14:13:10.743"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:13:10.744" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:13:10.744" endtime="20220413 14:13:10.744"/>
+</kw>
+<kw name="Navigating to maps" library="graphhapp">
+<kw name="click on Maps" library="topNavpanel">
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:10.746" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:13:12.614" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:13:10.745" endtime="20220413 14:13:12.614"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:13:12.617" level="DEBUG">Using robotframework-browser-screenshot-{index} to take screenshot.</msg>
+<msg timestamp="20220413 14:13:13.865" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\robotframework-browser-screenshot-1.png</msg>
+<msg timestamp="20220413 14:13:13.865" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-1.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:13:12.616" endtime="20220413 14:13:13.866"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:13:15.881" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:13:13.866" endtime="20220413 14:13:15.881"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:10.745" endtime="20220413 14:13:15.881"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:10.744" endtime="20220413 14:13:15.881"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:13:15.884" level="INFO">[{"type": "chromium", "id": "browser=0ce12aa5-a2ad-4531-b285-ab7245ccc789", "contexts": [{"type": "context", "id": "context=d5105038-7464-4de8-a492-f8c8fc485c8a", "activePage": "page=470d52f7-665b-4127-ba40-72a5ddef99d0", "pages": [{"type": "page", "title": "Driving Directions - GraphHopper Maps", "url": "https://graphhopper.com/maps/", "id": "page=470d52f7-665b-4127-ba40-72a5ddef99d0", "timestamp": 1649873585.777}]}], "activeContext": "context=d5105038-7464-4de8-a492-f8c8fc485c8a", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:13:15.884" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.0 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:15.884" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:13:15.884" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:13:15.901" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:13:15.909" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:13:15.919" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:13:15.883" endtime="20220413 14:13:15.919"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:13:16.179" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:13:15.920" endtime="20220413 14:13:16.180"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:15.882" endtime="20220413 14:13:16.180"/>
+</kw>
+<doc>to verify that Maps links is accessible</doc>
+<tag>topnav</tag>
+<status status="PASS" starttime="20220413 14:13:04.017" endtime="20220413 14:13:16.180"/>
+</test>
+<test id="s1-t4" name="able to verify maps page is loaded" line="30">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:13:16.189" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\1a74d074-3a14-48b6-8377-798a7a387a91"}</msg>
+<msg timestamp="20220413 14:13:17.310" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\1a74d074-3a14-48b6-8377-798a7a387a91"}</msg>
+<status status="PASS" starttime="20220413 14:13:16.188" endtime="20220413 14:13:17.311"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:13:17.312" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:13:17.329" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:13:17.329" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:13:17.311" endtime="20220413 14:13:17.330"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:13:21.920" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:13:21.920" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:13:17.330" endtime="20220413 14:13:21.920"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:13:21.923" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:13:21.921" endtime="20220413 14:13:21.924"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:13:21.937" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:13:21.924" endtime="20220413 14:13:21.938"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:16.187" endtime="20220413 14:13:21.938"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:13:21.938" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:13:21.938" endtime="20220413 14:13:21.939"/>
+</kw>
+<kw name="Verify maps is loaded" library="graphhapp">
+<kw name="verify the page loaded is Maps" library="topNavpanel">
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:21.941" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:13:22.021" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:13:21.940" endtime="20220413 14:13:22.021"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:13:24.035" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:13:22.021" endtime="20220413 14:13:24.035"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<var>${maps_page_url}</var>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220413 14:13:24.037" level="DEBUG">https://graphhopper.com/maps/</msg>
+<msg timestamp="20220413 14:13:24.037" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.0017998218536376953 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:24.038" level="INFO">${maps_page_url} = https://graphhopper.com/maps/</msg>
+<status status="PASS" starttime="20220413 14:13:24.035" endtime="20220413 14:13:24.038"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${maps_page_url}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220413 14:13:24.038" level="INFO">https://graphhopper.com/maps/</msg>
+<status status="PASS" starttime="20220413 14:13:24.038" endtime="20220413 14:13:24.038"/>
+</kw>
+<kw name="Get Url" library="Browser">
+<arg>==</arg>
+<arg>https://graphhopper.com/maps/</arg>
+<tag>Assertion</tag>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns the current URL.</doc>
+<msg timestamp="20220413 14:13:24.040" level="DEBUG">https://graphhopper.com/maps/</msg>
+<msg timestamp="20220413 14:13:24.041" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.0009791851043701172 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<status status="PASS" starttime="20220413 14:13:24.039" endtime="20220413 14:13:24.041"/>
+</kw>
+<kw name="Register Keyword To Run On Failure" library="Browser">
+<arg>take screenshot</arg>
+<tag>Config</tag>
+<doc>Sets the keyword to execute, when a Browser keyword fails.</doc>
+<msg timestamp="20220413 14:13:24.043" level="INFO">'take screenshot' will be run on failure.</msg>
+<status status="PASS" starttime="20220413 14:13:24.041" endtime="20220413 14:13:24.043"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:21.940" endtime="20220413 14:13:24.043"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:21.939" endtime="20220413 14:13:24.044"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:13:24.054" level="INFO">[{"type": "chromium", "id": "browser=464992a9-47b7-4ec9-90d9-143d49d4f2c5", "contexts": [{"type": "context", "id": "context=c1f8abec-5ec1-4842-805f-a8b6be08ee08", "activePage": "page=972c995d-b679-4e74-be35-0449587ceb5f", "pages": [{"type": "page", "title": "Driving Directions - GraphHopper Maps", "url": "https://graphhopper.com/maps/", "id": "page=972c995d-b679-4e74-be35-0449587ceb5f", "timestamp": 1649873597.759}]}], "activeContext": "context=c1f8abec-5ec1-4842-805f-a8b6be08ee08", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:13:24.054" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.006145954132080078 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:24.055" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:13:24.056" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:13:24.057" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:13:24.061" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:13:24.072" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:13:24.046" endtime="20220413 14:13:24.072"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:13:24.301" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:13:24.072" endtime="20220413 14:13:24.301"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:24.044" endtime="20220413 14:13:24.301"/>
+</kw>
+<doc>to verify maps page is loaded correctly</doc>
+<tag>ver-maps</tag>
+<status status="PASS" starttime="20220413 14:13:16.184" endtime="20220413 14:13:24.301"/>
+</test>
+<test id="s1-t5" name="able to enter from destination" line="37">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:13:24.308" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\5895f44c-6cc0-4339-8a72-88d8ee61b315"}</msg>
+<msg timestamp="20220413 14:13:25.375" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\5895f44c-6cc0-4339-8a72-88d8ee61b315"}</msg>
+<status status="PASS" starttime="20220413 14:13:24.307" endtime="20220413 14:13:25.375"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:13:25.376" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:13:25.389" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:13:25.389" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:13:25.375" endtime="20220413 14:13:25.390"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:13:30.388" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:13:30.388" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:13:25.390" endtime="20220413 14:13:30.388"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:13:30.392" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:13:30.389" endtime="20220413 14:13:30.392"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:13:30.410" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:13:30.392" endtime="20220413 14:13:30.410"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:24.306" endtime="20220413 14:13:30.410"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:13:30.411" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:13:30.411" endtime="20220413 14:13:30.411"/>
+</kw>
+<kw name="Enter To and From destination" library="graphhapp">
+<kw name="Inputting to and from destination" library="LeftNavpanel">
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:30.414" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:13:30.552" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:13:30.412" endtime="20220413 14:13:30.552"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id='0_Input']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:13:32.523" level="INFO">Waited for Element with selector //*[@id='0_Input'] at state visible</msg>
+<status status="PASS" starttime="20220413 14:13:30.552" endtime="20220413 14:13:32.523"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='0_Input']</arg>
+<arg>Iceland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:32.523" level="INFO">Fills the text 'Iceland' in the given field.</msg>
+<msg timestamp="20220413 14:13:32.546" level="DEBUG">Fill text Iceland on //*[@id='0_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:13:32.523" endtime="20220413 14:13:32.546"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<arg>fullscreen</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:13:32.546" level="DEBUG">Using fullscreen to take screenshot.</msg>
+<msg timestamp="20220413 14:13:33.046" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\fullscreen.png</msg>
+<msg timestamp="20220413 14:13:33.047" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fullscreen.png"&gt;&lt;img src="browser/screenshot/fullscreen.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:13:32.546" endtime="20220413 14:13:33.047"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:13:33.062" level="INFO">Waited for Element with selector //*[@id='1_Input'] at state visible</msg>
+<status status="PASS" starttime="20220413 14:13:33.047" endtime="20220413 14:13:33.062"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Ireland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:33.062" level="INFO">Fills the text 'Ireland' in the given field.</msg>
+<msg timestamp="20220413 14:13:33.081" level="DEBUG">Fill text Ireland on //*[@id='1_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:13:33.062" endtime="20220413 14:13:33.081"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:13:35.081" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:13:33.081" endtime="20220413 14:13:35.081"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<arg>fullscreen</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:13:35.082" level="DEBUG">Using fullscreen to take screenshot.</msg>
+<msg timestamp="20220413 14:13:35.310" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\fullscreen.png</msg>
+<msg timestamp="20220413 14:13:35.314" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fullscreen.png"&gt;&lt;img src="browser/screenshot/fullscreen.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:13:35.081" endtime="20220413 14:13:35.315"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:30.412" endtime="20220413 14:13:35.315"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:30.411" endtime="20220413 14:13:35.315"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:13:35.326" level="INFO">[{"type": "chromium", "id": "browser=9f185041-285b-4ca7-bfcd-36bb20e5e0f7", "contexts": [{"type": "context", "id": "context=b7b4ea3a-4138-4801-9f47-262c36fef80a", "activePage": "page=6d9fa323-2eeb-4276-97f0-9e30d53b6128", "pages": [{"type": "page", "title": "Driving Directions - GraphHopper Maps", "url": "https://graphhopper.com/maps/", "id": "page=6d9fa323-2eeb-4276-97f0-9e30d53b6128", "timestamp": 1649873605.742}]}], "activeContext": "context=b7b4ea3a-4138-4801-9f47-262c36fef80a", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:13:35.326" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.0065653324127197266 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:35.331" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:13:35.335" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:13:35.337" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:13:35.350" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:13:35.365" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:13:35.317" endtime="20220413 14:13:35.365"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:13:35.598" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:13:35.366" endtime="20220413 14:13:35.598"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:35.317" endtime="20220413 14:13:35.598"/>
+</kw>
+<doc>to verify that user is able to add from value in from field</doc>
+<tag>from</tag>
+<status status="PASS" starttime="20220413 14:13:24.304" endtime="20220413 14:13:35.599"/>
+</test>
+<test id="s1-t6" name="able to submit the to and from destinations" line="44">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:13:35.611" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\182dfd34-664d-4b27-a225-396ff6ec0249"}</msg>
+<msg timestamp="20220413 14:13:36.526" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\182dfd34-664d-4b27-a225-396ff6ec0249"}</msg>
+<status status="PASS" starttime="20220413 14:13:35.610" endtime="20220413 14:13:36.527"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:13:36.528" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:13:36.546" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:13:36.546" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:13:36.527" endtime="20220413 14:13:36.546"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:13:41.109" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:13:41.109" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:13:36.547" endtime="20220413 14:13:41.109"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:13:41.113" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:13:41.110" endtime="20220413 14:13:41.114"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:13:41.133" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:13:41.114" endtime="20220413 14:13:41.133"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:35.610" endtime="20220413 14:13:41.133"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:13:41.134" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:13:41.134" endtime="20220413 14:13:41.134"/>
+</kw>
+<kw name="Click on submit" library="graphhapp">
+<kw name="Submit button" library="LeftNavpanel">
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:41.136" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:13:41.230" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:13:41.136" endtime="20220413 14:13:41.231"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id='0_Input']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:13:43.115" level="INFO">Waited for Element with selector //*[@id='0_Input'] at state visible</msg>
+<status status="PASS" starttime="20220413 14:13:41.231" endtime="20220413 14:13:43.115"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='0_Input']</arg>
+<arg>Iceland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:43.115" level="INFO">Fills the text 'Iceland' in the given field.</msg>
+<msg timestamp="20220413 14:13:43.137" level="DEBUG">Fill text Iceland on //*[@id='0_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:13:43.115" endtime="20220413 14:13:43.137"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<arg>fullscreen</arg>
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:13:43.137" level="DEBUG">Using fullscreen to take screenshot.</msg>
+<msg timestamp="20220413 14:13:43.636" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\fullscreen.png</msg>
+<msg timestamp="20220413 14:13:43.637" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/fullscreen.png"&gt;&lt;img src="browser/screenshot/fullscreen.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:13:43.137" endtime="20220413 14:13:43.638"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:13:43.654" level="INFO">Waited for Element with selector //*[@id='1_Input'] at state visible</msg>
+<status status="PASS" starttime="20220413 14:13:43.638" endtime="20220413 14:13:43.654"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Ireland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:43.654" level="INFO">Fills the text 'Ireland' in the given field.</msg>
+<msg timestamp="20220413 14:13:43.676" level="DEBUG">Fill text Ireland on //*[@id='1_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:13:43.654" endtime="20220413 14:13:43.677"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:13:45.695" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:13:43.678" endtime="20220413 14:13:45.695"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:13:45.695" level="DEBUG">Using robotframework-browser-screenshot-{index} to take screenshot.</msg>
+<msg timestamp="20220413 14:13:45.918" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\robotframework-browser-screenshot-2.png</msg>
+<msg timestamp="20220413 14:13:45.918" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-2.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:13:45.695" endtime="20220413 14:13:45.919"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='searchButton']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:45.920" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:13:45.958" level="DEBUG">Clicked element: '//*[@id='searchButton']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:13:45.919" endtime="20220413 14:13:45.958"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:13:47.962" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:13:45.958" endtime="20220413 14:13:47.962"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:41.135" endtime="20220413 14:13:47.962"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:41.135" endtime="20220413 14:13:47.963"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:13:47.963" level="INFO">[{"type": "chromium", "id": "browser=e79df1f9-e423-4baf-8db7-2cc505678337", "contexts": [{"type": "context", "id": "context=8fd2342e-2d75-49e7-b9c8-d9643ca85935", "activePage": "page=6380a6fa-8aac-410d-b9a4-611834379d8f", "pages": [{"type": "page", "title": "GraphHopper Maps - Driving Directions", "url": "https://graphhopper.com/maps/?point=Iceland&amp;point=Ireland&amp;locale=en-US&amp;elevation=true&amp;profile=car&amp;use_miles=false&amp;layer=Omniscale", "id": "page=6380a6fa-8aac-410d-b9a4-611834379d8f", "timestamp": 1649873616.948}]}], "activeContext": "context=8fd2342e-2d75-49e7-b9c8-d9643ca85935", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:13:47.963" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.0 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:47.963" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:13:47.963" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:13:47.963" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:13:47.982" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:13:47.990" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:13:47.963" endtime="20220413 14:13:47.990"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:13:48.229" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:13:47.990" endtime="20220413 14:13:48.229"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:47.963" endtime="20220413 14:13:48.229"/>
+</kw>
+<doc>to verify that user is able to click on submit button</doc>
+<tag>submit</tag>
+<status status="PASS" starttime="20220413 14:13:35.605" endtime="20220413 14:13:48.229"/>
+</test>
+<test id="s1-t7" name="able to verify the results after submit is clicked" line="51">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:13:48.239" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\1614a48b-5310-487c-a09c-3bd390678c1d"}</msg>
+<msg timestamp="20220413 14:13:49.428" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\1614a48b-5310-487c-a09c-3bd390678c1d"}</msg>
+<status status="PASS" starttime="20220413 14:13:48.239" endtime="20220413 14:13:49.428"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:13:49.429" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:13:49.449" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:13:49.449" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:13:49.429" endtime="20220413 14:13:49.449"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:13:54.188" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:13:54.188" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:13:49.450" endtime="20220413 14:13:54.188"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:13:54.194" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:13:54.188" endtime="20220413 14:13:54.194"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:13:54.216" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:13:54.194" endtime="20220413 14:13:54.216"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:48.239" endtime="20220413 14:13:54.216"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:13:54.218" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:13:54.217" endtime="20220413 14:13:54.218"/>
+</kw>
+<kw name="verification after submit button" library="graphhapp">
+<kw name="verify submit button clicked" library="LeftNavpanel">
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:54.226" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:13:54.321" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:13:54.225" endtime="20220413 14:13:54.321"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='0_Input']</arg>
+<arg>Iceland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:54.323" level="INFO">Fills the text 'Iceland' in the given field.</msg>
+<msg timestamp="20220413 14:13:56.246" level="DEBUG">Fill text Iceland on //*[@id='0_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:13:54.322" endtime="20220413 14:13:56.246"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:13:56.251" level="INFO">Waited for Element with selector //*[@id='1_Input'] at state visible</msg>
+<status status="PASS" starttime="20220413 14:13:56.246" endtime="20220413 14:13:56.252"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Ireland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:56.252" level="INFO">Fills the text 'Ireland' in the given field.</msg>
+<msg timestamp="20220413 14:13:56.268" level="DEBUG">Fill text Ireland on //*[@id='1_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:13:56.252" endtime="20220413 14:13:56.268"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='searchButton']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:13:56.268" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:13:56.423" level="DEBUG">Clicked element: '//*[@id='searchButton']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:13:56.268" endtime="20220413 14:13:56.423"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:13:58.430" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:13:56.423" endtime="20220413 14:13:58.431"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:13:58.432" level="DEBUG">Using robotframework-browser-screenshot-{index} to take screenshot.</msg>
+<msg timestamp="20220413 14:13:58.859" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\robotframework-browser-screenshot-3.png</msg>
+<msg timestamp="20220413 14:13:58.860" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-3.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-3.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:13:58.432" endtime="20220413 14:13:58.860"/>
+</kw>
+<kw name="Get Element" library="Browser">
+<arg>//*[contains(text(),'Cannot find point 0: 64.984182,-18.105901')]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<msg timestamp="20220413 14:13:58.875" level="INFO">Locator found successfully.</msg>
+<status status="PASS" starttime="20220413 14:13:58.861" endtime="20220413 14:13:58.875"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:54.224" endtime="20220413 14:13:58.876"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:54.220" endtime="20220413 14:13:58.876"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:13:58.880" level="INFO">[{"type": "chromium", "id": "browser=aeed4b6b-15c3-4a01-a811-7fe4f81329ca", "contexts": [{"type": "context", "id": "context=5371607a-c396-496f-9f7a-2a936cdf6821", "activePage": "page=346b43c8-5a25-44a6-b59d-eefa642cefa4", "pages": [{"type": "page", "title": "GraphHopper Maps - Driving Directions", "url": "https://graphhopper.com/maps/?point=Iceland&amp;point=Ireland&amp;locale=en-US&amp;elevation=true&amp;profile=car&amp;use_miles=false&amp;layer=Omniscale", "id": "page=346b43c8-5a25-44a6-b59d-eefa642cefa4", "timestamp": 1649873629.89}]}], "activeContext": "context=5371607a-c396-496f-9f7a-2a936cdf6821", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:13:58.880" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.003577709197998047 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:13:58.881" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:13:58.884" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:13:58.885" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:13:58.889" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:13:58.897" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:13:58.876" endtime="20220413 14:13:58.897"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:13:59.145" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:13:58.897" endtime="20220413 14:13:59.145"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:58.876" endtime="20220413 14:13:59.145"/>
+</kw>
+<doc>this is to verify that user can verify serach results</doc>
+<tag>search</tag>
+<status status="PASS" starttime="20220413 14:13:48.236" endtime="20220413 14:13:59.145"/>
+</test>
+<test id="s1-t8" name="able to select a new route for racing bike" line="58">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:13:59.145" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\971aa716-6788-4386-83c4-e2ccbd93436f"}</msg>
+<msg timestamp="20220413 14:14:00.223" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\971aa716-6788-4386-83c4-e2ccbd93436f"}</msg>
+<status status="PASS" starttime="20220413 14:13:59.145" endtime="20220413 14:14:00.223"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:14:00.225" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:14:00.241" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:14:00.241" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:14:00.224" endtime="20220413 14:14:00.241"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:14:05.233" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:14:05.233" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:14:00.241" endtime="20220413 14:14:05.233"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:14:05.237" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:14:05.233" endtime="20220413 14:14:05.237"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:14:05.268" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:14:05.237" endtime="20220413 14:14:05.268"/>
+</kw>
+<status status="PASS" starttime="20220413 14:13:59.145" endtime="20220413 14:14:05.268"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:14:05.270" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:14:05.270" endtime="20220413 14:14:05.270"/>
+</kw>
+<kw name="new route" library="graphhapp">
+<kw name="click on more button" library="LeftNavpanel">
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:05.273" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:05.361" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:05.271" endtime="20220413 14:14:05.361"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//a[@id='more-vehicle-btn']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:05.362" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:07.492" level="DEBUG">Clicked element: '//a[@id='more-vehicle-btn']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:05.361" endtime="20220413 14:14:07.492"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//img[@src='img/racingbike.png']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:07.493" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:07.527" level="DEBUG">Clicked element: '//img[@src='img/racingbike.png']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:07.492" endtime="20220413 14:14:07.528"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='0_Input']</arg>
+<arg>Iceland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:07.529" level="INFO">Fills the text 'Iceland' in the given field.</msg>
+<msg timestamp="20220413 14:14:07.541" level="DEBUG">Fill text Iceland on //*[@id='0_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:07.528" endtime="20220413 14:14:07.541"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:14:07.553" level="INFO">Waited for Element with selector //*[@id='1_Input'] at state visible</msg>
+<status status="PASS" starttime="20220413 14:14:07.542" endtime="20220413 14:14:07.553"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Ireland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:07.554" level="INFO">Fills the text 'Ireland' in the given field.</msg>
+<msg timestamp="20220413 14:14:07.571" level="DEBUG">Fill text Ireland on //*[@id='1_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:07.553" endtime="20220413 14:14:07.571"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='searchButton']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:07.572" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:07.611" level="DEBUG">Clicked element: '//*[@id='searchButton']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:07.571" endtime="20220413 14:14:07.611"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:14:09.626" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:07.611" endtime="20220413 14:14:09.626"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:14:09.627" level="DEBUG">Using robotframework-browser-screenshot-{index} to take screenshot.</msg>
+<msg timestamp="20220413 14:14:10.252" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\robotframework-browser-screenshot-4.png</msg>
+<msg timestamp="20220413 14:14:10.252" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-4.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:14:09.626" endtime="20220413 14:14:10.252"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:05.271" endtime="20220413 14:14:10.252"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:05.270" endtime="20220413 14:14:10.252"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:14:10.280" level="INFO">[{"type": "chromium", "id": "browser=a31108a6-17e6-4d39-8064-0d16259c5700", "contexts": [{"type": "context", "id": "context=2d13beec-29e9-4752-921f-a232e231e95e", "activePage": "page=c079a33c-bbc2-4837-9713-258e787e95f3", "pages": [{"type": "page", "title": "GraphHopper Maps - Driving Directions", "url": "https://graphhopper.com/maps/?point=Iceland&amp;point=Ireland&amp;locale=en-US&amp;elevation=true&amp;profile=racingbike&amp;use_miles=false&amp;layer=Omniscale", "id": "page=c079a33c-bbc2-4837-9713-258e787e95f3", "timestamp": 1649873640.659}]}], "activeContext": "context=2d13beec-29e9-4752-921f-a232e231e95e", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:14:10.281" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.026777267456054688 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:14:10.282" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:14:10.283" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:14:10.284" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:14:10.287" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:14:10.294" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:14:10.253" endtime="20220413 14:14:10.294"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:14:10.576" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:14:10.294" endtime="20220413 14:14:10.576"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:10.253" endtime="20220413 14:14:10.576"/>
+</kw>
+<doc>able to click on racing bike and find route(s)</doc>
+<tag>bike</tag>
+<status status="PASS" starttime="20220413 14:13:59.145" endtime="20220413 14:14:10.592"/>
+</test>
+<test id="s1-t9" name="able to add a new destination field" line="65">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:14:10.593" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\10d673ea-7ff7-445e-88ec-f0c9b91da2ff"}</msg>
+<msg timestamp="20220413 14:14:11.705" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\10d673ea-7ff7-445e-88ec-f0c9b91da2ff"}</msg>
+<status status="PASS" starttime="20220413 14:14:10.593" endtime="20220413 14:14:11.705"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:14:11.707" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:14:11.723" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:14:11.723" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:14:11.706" endtime="20220413 14:14:11.723"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:14:16.365" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:14:16.365" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:14:11.723" endtime="20220413 14:14:16.365"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:14:16.369" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:14:16.365" endtime="20220413 14:14:16.369"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:14:16.388" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:14:16.369" endtime="20220413 14:14:16.389"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:10.593" endtime="20220413 14:14:16.389"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:14:16.391" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:14:16.390" endtime="20220413 14:14:16.391"/>
+</kw>
+<kw name="add new destination" library="graphhapp">
+<kw name="Add new destination field" library="LeftNavpanel">
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:16.399" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:16.495" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:16.396" endtime="20220413 14:14:16.495"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='x_pointAdd']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:16.496" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:18.606" level="DEBUG">Clicked element: '//*[@id='x_pointAdd']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:16.495" endtime="20220413 14:14:18.606"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:14:20.608" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:18.607" endtime="20220413 14:14:20.608"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=2_Input</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:14:20.625" level="INFO">Waited for Element with selector id=2_Input at state visible</msg>
+<status status="PASS" starttime="20220413 14:14:20.608" endtime="20220413 14:14:20.625"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='0_Input']</arg>
+<arg>Iceland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:20.625" level="INFO">Fills the text 'Iceland' in the given field.</msg>
+<msg timestamp="20220413 14:14:20.646" level="DEBUG">Fill text Iceland on //*[@id='0_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:20.625" endtime="20220413 14:14:20.646"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Ireland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:20.646" level="INFO">Fills the text 'Ireland' in the given field.</msg>
+<msg timestamp="20220413 14:14:20.658" level="DEBUG">Fill text Ireland on //*[@id='1_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:20.646" endtime="20220413 14:14:20.658"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//div[@class='autocomplete-suggestion'][@data-index='0']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:20.658" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:21.072" level="DEBUG">Clicked element: '//div[@class='autocomplete-suggestion'][@data-index='0']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:20.658" endtime="20220413 14:14:21.073"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:14:24.076" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:21.073" endtime="20220413 14:14:24.076"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id='2_Input']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:14:24.086" level="INFO">Waited for Element with selector //*[@id='2_Input'] at state visible</msg>
+<status status="PASS" starttime="20220413 14:14:24.076" endtime="20220413 14:14:24.086"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='2_Input']</arg>
+<arg>Italy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:24.086" level="INFO">Fills the text 'Italy' in the given field.</msg>
+<msg timestamp="20220413 14:14:24.108" level="DEBUG">Fill text Italy on //*[@id='2_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:24.086" endtime="20220413 14:14:24.109"/>
+</kw>
+<kw name="Press Keys" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:24.143" level="DEBUG">Pressed keys: "Enter" on //*[@id='1_Input'] </msg>
+<status status="PASS" starttime="20220413 14:14:24.109" endtime="20220413 14:14:24.143"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:14:26.152" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:24.144" endtime="20220413 14:14:26.152"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=searchButton</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:14:26.168" level="INFO">Waited for Element with selector id=searchButton at state visible</msg>
+<status status="PASS" starttime="20220413 14:14:26.152" endtime="20220413 14:14:26.168"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='searchButton']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:26.168" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:26.231" level="DEBUG">Clicked element: '//*[@id='searchButton']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:26.168" endtime="20220413 14:14:26.232"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:16.392" endtime="20220413 14:14:26.233"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:16.391" endtime="20220413 14:14:26.233"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:14:26.244" level="INFO">[{"type": "chromium", "id": "browser=7328230d-b011-499e-b2fc-d64db9fe3ece", "contexts": [{"type": "context", "id": "context=87492d47-54b0-4cd2-a11b-59e4ee1e2aac", "activePage": "page=b48c8a7e-5897-4c19-92b9-e9279448fe7a", "pages": [{"type": "page", "title": "GraphHopper Maps - Driving Directions", "url": "https://graphhopper.com/maps/?point=Iceland&amp;point=Ireland&amp;point=Italy&amp;locale=en-US&amp;elevation=true&amp;profile=car&amp;use_miles=false&amp;layer=Omniscale", "id": "page=b48c8a7e-5897-4c19-92b9-e9279448fe7a", "timestamp": 1649873652.131}]}], "activeContext": "context=87492d47-54b0-4cd2-a11b-59e4ee1e2aac", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:14:26.244" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.005993366241455078 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:14:26.246" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:14:26.247" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:14:26.250" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:14:26.256" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:14:26.266" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:14:26.237" endtime="20220413 14:14:26.266"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:14:26.554" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:14:26.266" endtime="20220413 14:14:26.555"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:26.235" endtime="20220413 14:14:26.556"/>
+</kw>
+<doc>able to click on "+" button</doc>
+<tag>new</tag>
+<status status="PASS" starttime="20220413 14:14:10.593" endtime="20220413 14:14:26.556"/>
+</test>
+<test id="s1-t10" name="able to verify results found" line="72">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:14:26.569" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\5fd38830-a855-4429-98cd-c33a938358d7"}</msg>
+<msg timestamp="20220413 14:14:27.741" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\5fd38830-a855-4429-98cd-c33a938358d7"}</msg>
+<status status="PASS" starttime="20220413 14:14:26.568" endtime="20220413 14:14:27.741"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:14:27.743" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:14:27.769" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:14:27.769" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:14:27.741" endtime="20220413 14:14:27.769"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:14:32.579" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:14:32.579" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:14:27.770" endtime="20220413 14:14:32.579"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:14:32.583" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:14:32.579" endtime="20220413 14:14:32.583"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:14:32.613" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:14:32.583" endtime="20220413 14:14:32.614"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:26.568" endtime="20220413 14:14:32.614"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:14:32.614" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:14:32.614" endtime="20220413 14:14:32.614"/>
+</kw>
+<kw name="verify the res" library="graphhapp">
+<kw name="Verify the run results" library="LeftNavpanel">
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:32.618" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:32.698" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:32.617" endtime="20220413 14:14:32.698"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='x_pointAdd']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:32.700" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:34.789" level="DEBUG">Clicked element: '//*[@id='x_pointAdd']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:32.698" endtime="20220413 14:14:34.789"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:14:36.804" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:34.789" endtime="20220413 14:14:36.804"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=2_Input</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:14:36.804" level="INFO">Waited for Element with selector id=2_Input at state visible</msg>
+<status status="PASS" starttime="20220413 14:14:36.804" endtime="20220413 14:14:36.804"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='0_Input']</arg>
+<arg>Iceland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:36.804" level="INFO">Fills the text 'Iceland' in the given field.</msg>
+<msg timestamp="20220413 14:14:36.836" level="DEBUG">Fill text Iceland on //*[@id='0_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:36.804" endtime="20220413 14:14:36.836"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Ireland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:36.836" level="INFO">Fills the text 'Ireland' in the given field.</msg>
+<msg timestamp="20220413 14:14:36.853" level="DEBUG">Fill text Ireland on //*[@id='1_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:36.836" endtime="20220413 14:14:36.853"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//div[@class='autocomplete-suggestion'][@data-index='0']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:36.853" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:37.261" level="DEBUG">Clicked element: '//div[@class='autocomplete-suggestion'][@data-index='0']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:36.853" endtime="20220413 14:14:37.261"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:14:40.272" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:37.261" endtime="20220413 14:14:40.272"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id='2_Input']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:14:40.272" level="INFO">Waited for Element with selector //*[@id='2_Input'] at state visible</msg>
+<status status="PASS" starttime="20220413 14:14:40.272" endtime="20220413 14:14:40.272"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='2_Input']</arg>
+<arg>Italy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:40.272" level="INFO">Fills the text 'Italy' in the given field.</msg>
+<msg timestamp="20220413 14:14:40.300" level="DEBUG">Fill text Italy on //*[@id='2_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:40.272" endtime="20220413 14:14:40.300"/>
+</kw>
+<kw name="Press Keys" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:40.324" level="DEBUG">Pressed keys: "Enter" on //*[@id='1_Input'] </msg>
+<status status="PASS" starttime="20220413 14:14:40.301" endtime="20220413 14:14:40.325"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:14:42.343" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:40.325" endtime="20220413 14:14:42.343"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=searchButton</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:14:42.345" level="INFO">Waited for Element with selector id=searchButton at state visible</msg>
+<status status="PASS" starttime="20220413 14:14:42.343" endtime="20220413 14:14:42.345"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='searchButton']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:42.345" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:42.414" level="DEBUG">Clicked element: '//*[@id='searchButton']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:42.345" endtime="20220413 14:14:42.414"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:14:44.427" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:42.414" endtime="20220413 14:14:44.427"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:14:44.427" level="DEBUG">Using robotframework-browser-screenshot-{index} to take screenshot.</msg>
+<msg timestamp="20220413 14:14:44.772" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\robotframework-browser-screenshot-5.png</msg>
+<msg timestamp="20220413 14:14:44.772" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-5.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-5.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:14:44.427" endtime="20220413 14:14:44.773"/>
+</kw>
+<kw name="Get Element" library="Browser">
+<arg>//*[contains(text(),'Cannot find point 0: 64.984182,-18.105901')]</arg>
+<tag>Getter</tag>
+<tag>PageContent</tag>
+<doc>Returns a reference to a Playwright [https://playwright.dev/docs/api/class-locator|Locator].</doc>
+<msg timestamp="20220413 14:14:44.793" level="INFO">Locator found successfully.</msg>
+<status status="PASS" starttime="20220413 14:14:44.773" endtime="20220413 14:14:44.793"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:32.617" endtime="20220413 14:14:44.793"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:32.614" endtime="20220413 14:14:44.793"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:14:44.803" level="INFO">[{"type": "chromium", "id": "browser=b20a9b6e-dcf1-40bf-b0de-fbbc371e8c23", "contexts": [{"type": "context", "id": "context=ed2cdc96-5960-40d2-accb-79170a4845aa", "activePage": "page=af392658-03f2-4f6d-b546-3bc436770c20", "pages": [{"type": "page", "title": "GraphHopper Maps - Driving Directions", "url": "https://graphhopper.com/maps/?point=Iceland&amp;point=Ireland&amp;point=Italy&amp;locale=en-US&amp;elevation=true&amp;profile=car&amp;use_miles=false&amp;layer=Omniscale", "id": "page=af392658-03f2-4f6d-b546-3bc436770c20", "timestamp": 1649873668.276}]}], "activeContext": "context=ed2cdc96-5960-40d2-accb-79170a4845aa", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:14:44.803" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.007055759429931641 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:14:44.803" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:14:44.805" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:14:44.806" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:14:44.812" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:14:44.819" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:14:44.794" endtime="20220413 14:14:44.820"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:14:45.108" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:14:44.820" endtime="20220413 14:14:45.108"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:44.794" endtime="20220413 14:14:45.108"/>
+</kw>
+<doc>able to verify the message from route results</doc>
+<tag>msg</tag>
+<status status="PASS" starttime="20220413 14:14:26.562" endtime="20220413 14:14:45.109"/>
+</test>
+<test id="s1-t11" name="able to get route" line="79">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:14:45.112" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\5b02eb5b-322b-4684-9596-c1b5987707c2"}</msg>
+<msg timestamp="20220413 14:14:46.156" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\5b02eb5b-322b-4684-9596-c1b5987707c2"}</msg>
+<status status="PASS" starttime="20220413 14:14:45.112" endtime="20220413 14:14:46.156"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:14:46.158" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:14:46.171" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:14:46.171" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:14:46.157" endtime="20220413 14:14:46.171"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:14:50.728" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:14:50.728" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:14:46.171" endtime="20220413 14:14:50.728"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:14:50.731" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:14:50.728" endtime="20220413 14:14:50.731"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:14:50.788" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:14:50.732" endtime="20220413 14:14:50.788"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:45.112" endtime="20220413 14:14:50.788"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:14:50.790" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:14:50.789" endtime="20220413 14:14:50.790"/>
+</kw>
+<kw name="select a new vehicle" library="graphhapp">
+<kw name="select a different vehicle" library="LeftNavpanel">
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:50.793" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:50.882" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:50.793" endtime="20220413 14:14:50.882"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:50.884" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:50.958" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:50.882" endtime="20220413 14:14:50.958"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='x_pointAdd']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:50.958" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:52.907" level="DEBUG">Clicked element: '//*[@id='x_pointAdd']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:50.958" endtime="20220413 14:14:52.907"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:14:54.922" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:52.908" endtime="20220413 14:14:54.922"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=2_Input</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:14:54.939" level="INFO">Waited for Element with selector id=2_Input at state visible</msg>
+<status status="PASS" starttime="20220413 14:14:54.922" endtime="20220413 14:14:54.939"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='0_Input']</arg>
+<arg>Iceland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:54.939" level="INFO">Fills the text 'Iceland' in the given field.</msg>
+<msg timestamp="20220413 14:14:54.958" level="DEBUG">Fill text Iceland on //*[@id='0_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:54.939" endtime="20220413 14:14:54.958"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Ireland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:54.958" level="INFO">Fills the text 'Ireland' in the given field.</msg>
+<msg timestamp="20220413 14:14:54.976" level="DEBUG">Fill text Ireland on //*[@id='1_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:54.958" endtime="20220413 14:14:54.976"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//div[@class='autocomplete-suggestion'][@data-index='0']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:54.976" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:14:55.388" level="DEBUG">Clicked element: '//div[@class='autocomplete-suggestion'][@data-index='0']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:14:54.976" endtime="20220413 14:14:55.388"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:14:58.414" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:55.388" endtime="20220413 14:14:58.414"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id='2_Input']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:14:58.415" level="INFO">Waited for Element with selector //*[@id='2_Input'] at state visible</msg>
+<status status="PASS" starttime="20220413 14:14:58.414" endtime="20220413 14:14:58.415"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='2_Input']</arg>
+<arg>Italy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:58.415" level="INFO">Fills the text 'Italy' in the given field.</msg>
+<msg timestamp="20220413 14:14:58.438" level="DEBUG">Fill text Italy on //*[@id='2_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:14:58.415" endtime="20220413 14:14:58.438"/>
+</kw>
+<kw name="Press Keys" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<msg timestamp="20220413 14:14:58.464" level="DEBUG">Pressed keys: "Enter" on //*[@id='1_Input'] </msg>
+<status status="PASS" starttime="20220413 14:14:58.438" endtime="20220413 14:14:58.464"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:15:00.468" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:14:58.465" endtime="20220413 14:15:00.468"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//a[@id='more-vehicle-btn']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:00.469" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:00.503" level="DEBUG">Clicked element: '//a[@id='more-vehicle-btn']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:00.468" endtime="20220413 14:15:00.504"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='mtb']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:00.505" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:00.574" level="DEBUG">Clicked element: '//*[@id='mtb']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:00.504" endtime="20220413 14:15:00.574"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=searchButton</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:15:00.586" level="INFO">Waited for Element with selector id=searchButton at state visible</msg>
+<status status="PASS" starttime="20220413 14:15:00.574" endtime="20220413 14:15:00.586"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='searchButton']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:00.587" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:00.650" level="DEBUG">Clicked element: '//*[@id='searchButton']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:00.586" endtime="20220413 14:15:00.650"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:15:02.658" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:15:00.650" endtime="20220413 14:15:02.658"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:15:02.659" level="DEBUG">Using robotframework-browser-screenshot-{index} to take screenshot.</msg>
+<msg timestamp="20220413 14:15:03.137" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\robotframework-browser-screenshot-6.png</msg>
+<msg timestamp="20220413 14:15:03.137" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-6.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-6.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:15:02.658" endtime="20220413 14:15:03.137"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:50.792" endtime="20220413 14:15:03.137"/>
+</kw>
+<status status="PASS" starttime="20220413 14:14:50.791" endtime="20220413 14:15:03.137"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:15:03.157" level="INFO">[{"type": "chromium", "id": "browser=581774e8-a8f6-45a6-bf41-dfea76360572", "contexts": [{"type": "context", "id": "context=3223cb2d-97f9-46a3-a498-5fc49da4621c", "activePage": "page=c35c6c04-70e2-44fb-9eb9-8cc068d670d9", "pages": [{"type": "page", "title": "GraphHopper Maps - Driving Directions", "url": "https://graphhopper.com/maps/?point=Iceland&amp;point=Ireland&amp;point=Italy&amp;locale=en-US&amp;elevation=true&amp;profile=mtb&amp;use_miles=false&amp;layer=Omniscale", "id": "page=c35c6c04-70e2-44fb-9eb9-8cc068d670d9", "timestamp": 1649873686.59}]}], "activeContext": "context=3223cb2d-97f9-46a3-a498-5fc49da4621c", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:15:03.158" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.021161317825317383 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:15:03.160" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:15:03.162" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:15:03.163" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:15:03.171" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:15:03.191" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:15:03.137" endtime="20220413 14:15:03.191"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:15:03.450" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:15:03.191" endtime="20220413 14:15:03.450"/>
+</kw>
+<status status="PASS" starttime="20220413 14:15:03.137" endtime="20220413 14:15:03.450"/>
+</kw>
+<doc>select a new veh</doc>
+<tag>nv</tag>
+<status status="PASS" starttime="20220413 14:14:45.112" endtime="20220413 14:15:03.450"/>
+</test>
+<test id="s1-t12" name="close the height-graph on right" line="86">
+<kw name="Start test" library="common" type="SETUP">
+<kw name="New Browser" library="Browser">
+<arg>${Browser}[0]</arg>
+<arg>false</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<msg timestamp="20220413 14:15:03.450" level="INFO">{"browser": "chromium", "headless": false, "handleSIGINT": true, "handleSIGTERM": true, "handleSIGHUP": true, "timeout": 30000.0, "devtools": false, "slowMo": 0.0, "tracesDir": "C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\c923771f-024b-4f0e-9669-7d61ee090e64"}</msg>
+<msg timestamp="20220413 14:15:04.337" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"handleSIGINT":true,"handleSIGTERM":true,"handleSIGHUP":true,"timeout":30000,"devtools":false,"slowMo":0,"tracesDir":"C:\\developement\\robot-scripts\\browserlib\\results\\browser\\traces\\c923771f-024b-4f0e-9669-7d61ee090e64"}</msg>
+<status status="PASS" starttime="20220413 14:15:03.450" endtime="20220413 14:15:04.338"/>
+</kw>
+<kw name="New Context" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new BrowserContext with specified options.</doc>
+<msg timestamp="20220413 14:15:04.339" level="INFO">{"acceptDownloads": true, "ignoreHTTPSErrors": false, "bypassCSP": false, "deviceScaleFactor": 1.0, "isMobile": false, "hasTouch": false, "javaScriptEnabled": true, "offline": false, "hideRfBrowser": false, "reducedMotion": "no-preference", "forcedColors": "none"}</msg>
+<msg timestamp="20220413 14:15:04.351" level="INFO">Successfully created context. </msg>
+<msg timestamp="20220413 14:15:04.351" level="INFO">{'acceptDownloads': True, 'ignoreHTTPSErrors': False, 'bypassCSP': False, 'deviceScaleFactor': 1, 'isMobile': False, 'hasTouch': False, 'javaScriptEnabled': True, 'offline': False, 'hideRfBrowser': False, 'reducedMotion': 'no-preference', 'forcedColors': 'none'}</msg>
+<status status="PASS" starttime="20220413 14:15:04.338" endtime="20220413 14:15:04.351"/>
+</kw>
+<kw name="New Page" library="Browser">
+<arg>${URL}</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<msg timestamp="20220413 14:15:08.955" level="INFO">Successfully initialized new page object and opened url: https://www.graphhopper.com/</msg>
+<msg timestamp="20220413 14:15:08.955" level="DEBUG">Video is not enabled.</msg>
+<status status="PASS" starttime="20220413 14:15:04.351" endtime="20220413 14:15:08.955"/>
+</kw>
+<kw name="Delete All Cookies" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Deletes all cookies from the currently active browser context.</doc>
+<msg timestamp="20220413 14:15:08.959" level="INFO">All cookies deleted.</msg>
+<status status="PASS" starttime="20220413 14:15:08.955" endtime="20220413 14:15:08.959"/>
+</kw>
+<kw name="Set Viewport Size" library="Browser">
+<arg>1500</arg>
+<arg>824</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Sets current Pages viewport size to specified dimensions.</doc>
+<msg timestamp="20220413 14:15:08.974" level="INFO">Set viewport size to: [object Object]</msg>
+<status status="PASS" starttime="20220413 14:15:08.959" endtime="20220413 14:15:08.974"/>
+</kw>
+<status status="PASS" starttime="20220413 14:15:03.450" endtime="20220413 14:15:08.975"/>
+</kw>
+<kw name="Set Log Level" library="BuiltIn">
+<arg>debug</arg>
+<doc>Sets the log threshold to the specified level and returns the old level.</doc>
+<msg timestamp="20220413 14:15:08.975" level="INFO">Log level changed from DEBUG to DEBUG.</msg>
+<status status="PASS" starttime="20220413 14:15:08.975" endtime="20220413 14:15:08.976"/>
+</kw>
+<kw name="close graph on right" library="graphhapp">
+<kw name="close the graph" library="rightpanel">
+<kw name="select a different vehicle" library="LeftNavpanel">
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:08.978" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:09.073" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:08.977" endtime="20220413 14:15:09.073"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>${map}</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:09.074" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:09.108" level="DEBUG">Clicked element: '//div//a[@href='https://graphhopper.com/maps']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:09.073" endtime="20220413 14:15:09.109"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='x_pointAdd']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:09.110" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:11.551" level="DEBUG">Clicked element: '//*[@id='x_pointAdd']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:09.109" endtime="20220413 14:15:11.551"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:15:13.566" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:15:11.551" endtime="20220413 14:15:13.566"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=2_Input</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:15:13.568" level="INFO">Waited for Element with selector id=2_Input at state visible</msg>
+<status status="PASS" starttime="20220413 14:15:13.567" endtime="20220413 14:15:13.568"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='0_Input']</arg>
+<arg>Iceland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:13.568" level="INFO">Fills the text 'Iceland' in the given field.</msg>
+<msg timestamp="20220413 14:15:13.602" level="DEBUG">Fill text Iceland on //*[@id='0_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:15:13.568" endtime="20220413 14:15:13.602"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Ireland</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:13.602" level="INFO">Fills the text 'Ireland' in the given field.</msg>
+<msg timestamp="20220413 14:15:13.618" level="DEBUG">Fill text Ireland on //*[@id='1_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:15:13.602" endtime="20220413 14:15:13.618"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//div[@class='autocomplete-suggestion'][@data-index='0']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:13.618" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:14.012" level="DEBUG">Clicked element: '//div[@class='autocomplete-suggestion'][@data-index='0']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:13.618" endtime="20220413 14:15:14.012"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:15:17.024" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20220413 14:15:14.014" endtime="20220413 14:15:17.024"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>//*[@id='2_Input']</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:15:17.025" level="INFO">Waited for Element with selector //*[@id='2_Input'] at state visible</msg>
+<status status="PASS" starttime="20220413 14:15:17.024" endtime="20220413 14:15:17.025"/>
+</kw>
+<kw name="Fill Text" library="Browser">
+<arg>//*[@id='2_Input']</arg>
+<arg>Italy</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Clears and fills the given ``txt`` into the text field found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:17.025" level="INFO">Fills the text 'Italy' in the given field.</msg>
+<msg timestamp="20220413 14:15:17.048" level="DEBUG">Fill text Italy on //*[@id='2_Input'] with force: false</msg>
+<status status="PASS" starttime="20220413 14:15:17.025" endtime="20220413 14:15:17.048"/>
+</kw>
+<kw name="Press Keys" library="Browser">
+<arg>//*[@id='1_Input']</arg>
+<arg>Enter</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given key combination into element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:17.072" level="DEBUG">Pressed keys: "Enter" on //*[@id='1_Input'] </msg>
+<status status="PASS" starttime="20220413 14:15:17.048" endtime="20220413 14:15:17.072"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:15:19.082" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:15:17.073" endtime="20220413 14:15:19.082"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//a[@id='more-vehicle-btn']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:19.082" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:19.124" level="DEBUG">Clicked element: '//a[@id='more-vehicle-btn']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:19.082" endtime="20220413 14:15:19.124"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='mtb']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:19.124" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:19.201" level="DEBUG">Clicked element: '//*[@id='mtb']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:19.124" endtime="20220413 14:15:19.201"/>
+</kw>
+<kw name="Wait For Elements State" library="Browser">
+<arg>id=searchButton</arg>
+<arg>visible</arg>
+<tag>PageContent</tag>
+<tag>Wait</tag>
+<doc>Waits for the element found by ``selector`` to satisfy state option.</doc>
+<msg timestamp="20220413 14:15:19.212" level="INFO">Waited for Element with selector id=searchButton at state visible</msg>
+<status status="PASS" starttime="20220413 14:15:19.201" endtime="20220413 14:15:19.212"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@id='searchButton']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:19.214" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:19.271" level="DEBUG">Clicked element: '//*[@id='searchButton']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:19.212" endtime="20220413 14:15:19.271"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:15:21.280" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:15:19.271" endtime="20220413 14:15:21.280"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:15:21.280" level="DEBUG">Using robotframework-browser-screenshot-{index} to take screenshot.</msg>
+<msg timestamp="20220413 14:15:21.902" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\robotframework-browser-screenshot-7.png</msg>
+<msg timestamp="20220413 14:15:21.902" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-7.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-7.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:15:21.280" endtime="20220413 14:15:21.903"/>
+</kw>
+<status status="PASS" starttime="20220413 14:15:08.977" endtime="20220413 14:15:21.903"/>
+</kw>
+<kw name="Click" library="Browser">
+<arg>//*[@class='heightgraph-close-icon']</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<msg timestamp="20220413 14:15:21.904" level="DEBUG">Click options are: {"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}</msg>
+<msg timestamp="20220413 14:15:21.958" level="DEBUG">Clicked element: '//*[@class='heightgraph-close-icon']' with options: '{"button": "left", "clickCount": 1, "force": false, "noWaitAfter": false}'</msg>
+<status status="PASS" starttime="20220413 14:15:21.903" endtime="20220413 14:15:21.959"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220413 14:15:23.974" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20220413 14:15:21.959" endtime="20220413 14:15:23.974"/>
+</kw>
+<kw name="Take Screenshot" library="Browser">
+<tag>PageContent</tag>
+<doc>Takes a screenshot of the current window or element and saves it to disk.</doc>
+<msg timestamp="20220413 14:15:23.974" level="DEBUG">Using robotframework-browser-screenshot-{index} to take screenshot.</msg>
+<msg timestamp="20220413 14:15:24.287" level="DEBUG">Screenshot successfully captured to: C:\developement\robot-scripts\browserlib\results\browser\screenshot\robotframework-browser-screenshot-8.png</msg>
+<msg timestamp="20220413 14:15:24.287" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="browser/screenshot/robotframework-browser-screenshot-8.png"&gt;&lt;img src="browser/screenshot/robotframework-browser-screenshot-8.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20220413 14:15:23.974" endtime="20220413 14:15:24.287"/>
+</kw>
+<status status="PASS" starttime="20220413 14:15:08.976" endtime="20220413 14:15:24.287"/>
+</kw>
+<status status="PASS" starttime="20220413 14:15:08.976" endtime="20220413 14:15:24.287"/>
+</kw>
+<kw name="End test" library="common" type="TEARDOWN">
+<kw name="Close Page" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the ``page`` in ``context`` in ``browser``.</doc>
+<msg timestamp="20220413 14:15:24.302" level="INFO">[{"type": "chromium", "id": "browser=215b4818-0d11-4a08-afa0-8824feed8c48", "contexts": [{"type": "context", "id": "context=d357521d-7ccd-4e47-af30-79e54540ddfc", "activePage": "page=6b518b8f-dbcc-4435-ad0e-1f5999034eeb", "pages": [{"type": "page", "title": "GraphHopper Maps - Driving Directions", "url": "https://graphhopper.com/maps/?point=Iceland&amp;point=Ireland&amp;point=Italy&amp;locale=en-US&amp;elevation=true&amp;profile=mtb&amp;use_miles=false&amp;layer=Omniscale", "id": "page=6b518b8f-dbcc-4435-ad0e-1f5999034eeb", "timestamp": 1649873704.762}]}], "activeContext": "context=d357521d-7ccd-4e47-af30-79e54540ddfc", "activeBrowser": true}]</msg>
+<msg timestamp="20220413 14:15:24.302" level="DEBUG">Assertion polling statistics:
+First element asserted in: 0.012863874435424805 seconds
+Total tries: 1
+Elapsed time in retries 0.0 seconds</msg>
+<msg timestamp="20220413 14:15:24.304" level="INFO">Active context id</msg>
+<msg timestamp="20220413 14:15:24.307" level="INFO">Successfully changed active browser</msg>
+<msg timestamp="20220413 14:15:24.309" level="INFO">Returned active context id</msg>
+<msg timestamp="20220413 14:15:24.317" level="INFO">Successfully changed active context</msg>
+<msg timestamp="20220413 14:15:24.325" level="INFO">Successfully closed Page</msg>
+<status status="PASS" starttime="20220413 14:15:24.288" endtime="20220413 14:15:24.325"/>
+</kw>
+<kw name="Close Browser" library="Browser">
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Closes the current browser.</doc>
+<msg timestamp="20220413 14:15:24.572" level="INFO">Closed browser</msg>
+<status status="PASS" starttime="20220413 14:15:24.326" endtime="20220413 14:15:24.572"/>
+</kw>
+<status status="PASS" starttime="20220413 14:15:24.288" endtime="20220413 14:15:24.572"/>
+</kw>
+<doc>close the graph to see the map clearly</doc>
+<tag>graph</tag>
+<status status="PASS" starttime="20220413 14:15:03.450" endtime="20220413 14:15:24.572"/>
+</test>
+<status status="PASS" starttime="20220413 14:12:49.886" endtime="20220413 14:15:24.572"/>
+</suite>
+<statistics>
+<total>
+<stat pass="12" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">bike</stat>
+<stat pass="1" fail="0" skip="0">from</stat>
+<stat pass="1" fail="0" skip="0">graph</stat>
+<stat pass="1" fail="0" skip="0">msg</stat>
+<stat pass="1" fail="0" skip="0">new</stat>
+<stat pass="1" fail="0" skip="0">nv</stat>
+<stat pass="1" fail="0" skip="0">search</stat>
+<stat pass="1" fail="0" skip="0">submit</stat>
+<stat pass="1" fail="0" skip="0">topnav</stat>
+<stat pass="1" fail="0" skip="0">url</stat>
+<stat pass="1" fail="0" skip="0">ver</stat>
+<stat pass="1" fail="0" skip="0">ver-maps</stat>
+</tag>
+<suite>
+<stat pass="12" fail="0" skip="0" id="s1" name="Graphh">Graphh</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220413 14:12:50.171" level="ERROR">Error in file 'C:\developement\robot-scripts\browserlib\Resources\PO\rightpanel.robot' on line 3: Resource file '\Resources\PO\LeftNavpanel.robot' does not exist.</msg>
+</errors>
+</robot>
